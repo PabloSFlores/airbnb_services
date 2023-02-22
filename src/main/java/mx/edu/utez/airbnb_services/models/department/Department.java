@@ -1,5 +1,7 @@
 package mx.edu.utez.airbnb_services.models.department;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -43,5 +45,6 @@ public class Department {
 
     //Relación con rents
     @OneToMany(mappedBy = "department", cascade = CascadeType.ALL)
-    private List<Rent> transactions;
+    @JsonIgnoreProperties("department")
+    private List<Rent> rent;
 }

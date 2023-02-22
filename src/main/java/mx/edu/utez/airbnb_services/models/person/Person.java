@@ -1,5 +1,6 @@
 package mx.edu.utez.airbnb_services.models.person;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,7 +12,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "people")
 @NoArgsConstructor
-//@AllArgsConstructor
+@AllArgsConstructor
 @Setter
 @Getter
 public class Person {
@@ -25,9 +26,10 @@ public class Person {
     @Column(columnDefinition = "DATE", nullable = false)
     private String birthday;
 
+    //Quité el optianal = false, porque ocasionaba error
     @OneToOne(mappedBy = "person",
-            cascade = CascadeType.ALL,
-            optional = false)
+            cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("person")
     private User user;
 
     public Person(Long id, String fullname, User user) {

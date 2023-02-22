@@ -1,5 +1,7 @@
 package mx.edu.utez.airbnb_services.models.rent;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -20,6 +22,10 @@ public class Rent {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(nullable = false ,columnDefinition = "TEXT")
+    private String description;
+
+    //No sé si dejarle el current_date
     @Column(columnDefinition = "DATE DEFAULT (CURRENT_DATE)")
     private String initial_date;
 
@@ -29,10 +35,12 @@ public class Rent {
     //Relación departments
     @ManyToOne
     @JoinColumn(name = "department_id")
+    @JsonIgnoreProperties("rent")
     private Department department;
 
     //Relación users
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonIgnoreProperties("rent")
     private User user;
 }

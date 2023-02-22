@@ -1,6 +1,7 @@
 package mx.edu.utez.airbnb_services.models.user;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -36,10 +37,11 @@ public class User {
     @JoinColumn(name = "person_id",
             referencedColumnName = "id",
             unique = true)
-    //@JsonIgnore
+    @JsonIgnoreProperties("user")
     private Person person;
 
     //Relación con rents
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("user")
     private List<Rent> rent;
 }
