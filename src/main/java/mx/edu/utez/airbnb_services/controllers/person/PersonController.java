@@ -27,7 +27,7 @@ public class PersonController {
         return this.service.insert(person.getPerson());
     }
     @PutMapping("/")
-    public Person update(@RequestBody PersonDto person) {
+    public Boolean update(@RequestBody PersonDto person) {
         return this.service.update(person.getPerson());
     }
     @DeleteMapping("/{id}")

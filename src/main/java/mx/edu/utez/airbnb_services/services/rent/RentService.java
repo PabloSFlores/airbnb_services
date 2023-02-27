@@ -27,14 +27,8 @@ public class RentService {
         return this.repository.saveAndFlush(rent);
     }
     @Transactional(rollbackFor = {SQLException.class})
-    public int save (Rent rent) {
-        return this.repository.insert(
-                rent.getDescription(),
-                rent.getInitial_date(),
-                rent.getFinal_date(),
-                rent.getDepartment().getId(),
-                rent.getUser().getId()
-        );
+    public Rent save (Rent rent) {
+        return this.repository.saveAndFlush(rent);
     }
     @Transactional(rollbackFor = {SQLException.class})
     public Rent update (Rent rent) {

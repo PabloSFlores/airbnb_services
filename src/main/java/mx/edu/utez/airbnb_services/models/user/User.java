@@ -33,7 +33,7 @@ public class User {
     private String image;
 
     //Relación con person
-    @OneToOne
+    @OneToOne(optional = false)
     @JoinColumn(name = "person_id",
             referencedColumnName = "id",
             unique = true)

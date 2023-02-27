@@ -24,7 +24,7 @@ public class RentController {
         return this.service.getOne(id);
     }
     @PostMapping("/")
-    public int save(@RequestBody RentDto rent) {
+    public Rent save(@RequestBody RentDto rent) {
         return this.service.save(rent.getRent());
     }
     @PutMapping("/")

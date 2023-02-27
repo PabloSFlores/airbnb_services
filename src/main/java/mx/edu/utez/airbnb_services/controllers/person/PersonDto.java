@@ -16,10 +16,8 @@ import javax.validation.constraints.Size;
 @Setter
 public class PersonDto {
     private Long id;
-    @NotEmpty(message = "Campo obligatorio")
     @Size(min = 1, max = 255, message = "Máximo 255 carácteres.")
     private String fullname;
-    @NotEmpty(message = "Campo obligatorio")
     private String birthday;
     private User user;
     public Person getPerson(){

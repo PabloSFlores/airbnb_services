@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Entity
 @Table(name = "people")
 @NoArgsConstructor
-@AllArgsConstructor
 @Setter
 @Getter
 public class Person {
@@ -20,10 +19,10 @@ public class Person {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
+    @Column()
     private String fullname;
 
-    @Column(columnDefinition = "DATE", nullable = false)
+    @Column(columnDefinition = "DATE")
     private String birthday;
 
     //Quité el optianal = false, porque ocasionaba error
@@ -32,7 +31,7 @@ public class Person {
     @JsonIgnoreProperties("person")
     private User user;
 
-    public Person(Long id, String fullname, User user) {
+    public Person(Long id, String fullname, String birthday, User user) {
         this.id = id;
         this.fullname = fullname;
         this.birthday = birthday;

@@ -29,8 +29,8 @@ public class PersonService {
         return this.repository.saveAndFlush(person);
     }
     @Transactional(rollbackFor = {SQLException.class})
-    public Person update (Person person) {
-        return this.repository.saveAndFlush(person);
+    public Boolean update (Person person) {
+        return this.repository.updatePersonById(person.getFullname(),person.getBirthday(),person.getId())>0;
     }
 
     @Transactional(rollbackFor = {SQLException.class})

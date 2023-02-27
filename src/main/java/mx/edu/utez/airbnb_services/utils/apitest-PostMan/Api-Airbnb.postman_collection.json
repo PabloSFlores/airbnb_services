@@ -63,7 +63,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"fullname\":\"Mario Hugo III\",\r\n    \"birthday\":\"2000-07-19\"\r\n}"
+							"raw": "{\r\n    \"user\":{\r\n        \"email\":\"pablo@gmail.com\",\r\n        \"uid\":\"aaaa\"\r\n    }\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api-airbnb/person/",
@@ -94,7 +94,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\":1,\r\n    \"fullname\":\"Pablo S Flores Santana\",\r\n    \"birthday\":\"2003-04-20\"\r\n}"
+							"raw": "{\r\n    \"id\":2,\r\n    \"fullname\":\"Jose Luis\",\r\n    \"birthday\":\"2002-05-10\",\r\n    \"user\":{}\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api-airbnb/person/",
@@ -203,7 +203,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"mariopro@gmail.com\",\r\n    \"uid\":\"123hugod\",\r\n    \"person\":{\r\n        \"id\":1\r\n    }\r\n}"
+							"raw": "{\r\n    \"email\":\"mariopro@gmail.com\",\r\n    \"uid\":\"123hugod\"\r\n}"
 						},
 						"url": {
 							"raw": "http://localhost:8080/api-airbnb/user/",
